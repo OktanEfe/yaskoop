@@ -31,7 +31,7 @@ export default function UyeLogoSeridi() {
                 <div className="relative w-full h-full">
                   <Image
                     src={item.logo}
-                    alt={item.name || 'Üye Logo'}
+                    alt={item.isim || 'Üye Logo'}
                     fill
                     className="object-contain"
                     sizes="180px"
@@ -50,7 +50,7 @@ export default function UyeLogoSeridi() {
                 <div className="relative w-full h-full transition-all duration-500 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100">
                   <Image
                     src={item.logo}
-                    alt={item.name || 'Üye Logo'}
+                    alt={item.isim || 'Üye Logo'}
                     fill
                     className="object-contain"
                     sizes="(max-width: 1024px) 25vw, 20vw"

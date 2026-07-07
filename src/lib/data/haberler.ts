@@ -9,6 +9,7 @@ export const haberler: NewsItem[] = [
       "Sınırlı Sorumlu Yalova Süs Bitkileri İşletme Kooperatifi (Yaskoop), Yalova'daki kurum ve kuruluşlarla iş birliği ve istişarelerini sürdürüyor. Bu kapsamda kooperatif yönetimi, Yalova Ticaret ve Sanayi Odası'nı ziyaret ederek kooperatifin kuruluş süreci, hedefleri ve süs bitkileri sektörünün mevcut durumu hakkında bilgi alışverişinde bulundu. Görüşmede değerli katkı ve destekleri için YTSO Yönetim Kurulu Başkanı Sayın Cemil Demiryürek'e teşekkür edildi. Yaskoop heyeti ayrıca Yalova İl Tarım ve Orman Müdürü Sayın Mustafa İlmeç'i makamında ziyaret etti.",
     tarih: '2025-09-10',
     kategori: 'haber',
+    tag: 'haber',
     resimler: ['/haber1_1.jpg', '/haber1_2.jpeg', '/haber1_3.png'],
   },
   {
@@ -19,6 +20,7 @@ export const haberler: NewsItem[] = [
       "Sınırlı Sorumlu Yalova Süs Bitkileri İşletme Kooperatifi (YASKOOP) olarak 12-14 Eylül 2025 tarihlerinde 2.si düzenlenen Yalova Aronia Festivali'nde yerimizi aldık.",
     tarih: '2025-09-14',
     kategori: 'etkinlik',
+    tag: 'etkinlik',
     resimler: ['/haber2_1.jpg', '/haber2_2.jpg', '/haber2_3.jpg'],
   },
   {
@@ -29,6 +31,7 @@ export const haberler: NewsItem[] = [
       "Sınırlı Sorumlu Yalova Süs Bitkileri İşletme Kooperatifi olarak 10-13 Eylül 2025 tarihlerinde Sapanca'da düzenlenen PSB Anatolia Uluslararası Peyzaj, Süs Bitkileri, Bahçe Sanatları ve Ekipmanları Fuarı'nda Kooperatif ortaklarımız YC Fidancılık, Er Botanik ve Organik Fidancılığı ziyarette bulunduk.",
     tarih: '2025-09-13',
     kategori: 'gezi',
+    tag: 'etkinlik',
     resimler: ['/haber4-1.jpeg', '/haber4-2.jpeg', '/haber4-3.jpeg'],
   },
 ];

@@ -6,17 +6,17 @@ interface HaberCardProps {
   onClick: (haber: NewsItem) => void;
 }
 
-const kategoriConfig: Record<
-  NewsItem['kategori'],
+const tagConfig: Record<
+  NewsItem['tag'],
   { label: string; className: string }
 > = {
   haber:    { label: 'Haber',    className: 'bg-blue-50 text-blue-700' },
   etkinlik: { label: 'Etkinlik', className: 'bg-accent/10 text-accent' },
-  gezi:     { label: 'Gezi',     className: 'bg-amber-50 text-amber-700' },
+  duyuru:   { label: 'Duyuru',   className: 'bg-emerald-50 text-emerald-700' },
 };
 
 export default function HaberCard({ haber, onClick }: HaberCardProps) {
-  const { label, className: badgeClass } = kategoriConfig[haber.kategori];
+  const { label, className: badgeClass } = tagConfig[haber.tag];
   const date = new Date(haber.tarih).toLocaleDateString('tr-TR', {
     day: 'numeric',
     month: 'long',

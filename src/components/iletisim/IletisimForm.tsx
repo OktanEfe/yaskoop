@@ -14,7 +14,7 @@ interface FormState {
 const initial: FormState = { ad: '', eposta: '', konu: '', mesaj: '' };
 
 const inputClass =
-  'w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-shadow placeholder:text-gray-400';
+  'w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 shadow-sm transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none';
 
 export default function IletisimForm() {
   const [form, setForm] = useState<FormState>(initial);
@@ -23,7 +23,7 @@ export default function IletisimForm() {
   function handleChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -34,18 +34,18 @@ export default function IletisimForm() {
 
   if (submitted) {
     return (
-      <div className="bg-background border border-border rounded-xl p-8 text-center">
-        <p className="text-foreground font-semibold text-lg mb-1">Mesajınız alındı!</p>
-        <p className="text-muted text-sm">En kısa sürede size geri döneceğiz.</p>
+      <div className="rounded-[1.75rem] border border-neutral-200 bg-emerald-50 p-8 text-center">
+        <p className="text-emerald-900 font-semibold text-xl mb-2">Mesajınız alındı!</p>
+        <p className="text-neutral-600 text-sm">En kısa sürede size geri dönülecektir.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="ad" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="ad" className="block text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500 mb-2">
             Ad Soyad
           </label>
           <input
@@ -60,7 +60,7 @@ export default function IletisimForm() {
           />
         </div>
         <div>
-          <label htmlFor="eposta" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="eposta" className="block text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500 mb-2">
             E-posta
           </label>
           <input
@@ -77,7 +77,7 @@ export default function IletisimForm() {
       </div>
 
       <div>
-        <label htmlFor="konu" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="konu" className="block text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500 mb-2">
           Konu
         </label>
         <select
@@ -97,22 +97,22 @@ export default function IletisimForm() {
       </div>
 
       <div>
-        <label htmlFor="mesaj" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="mesaj" className="block text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500 mb-2">
           Mesaj
         </label>
         <textarea
           id="mesaj"
           name="mesaj"
           required
-          rows={4}
+          rows={5}
           value={form.mesaj}
           onChange={handleChange}
           placeholder="Mesajınızı buraya yazın..."
-          className={`${inputClass} resize-none`}
+          className={`${inputClass} min-h-[160px] resize-none`}
         />
       </div>
 
-      <Button type="submit" variant="primary" size="md" className="w-full mt-2">
+      <Button type="submit" variant="primary" size="md" className="w-full rounded-full py-4">
         Gönder
       </Button>
     </form>

@@ -8,10 +8,10 @@ interface HaberDetayProps {
   onClose: () => void;
 }
 
-const kategoriLabel: Record<NewsItem['kategori'], string> = {
+const tagLabel: Record<NewsItem['tag'], string> = {
   haber:    'Haber',
   etkinlik: 'Etkinlik',
-  gezi:     'Gezi',
+  duyuru:   'Duyuru',
 };
 
 export default function HaberDetay({ haber, onClose }: HaberDetayProps) {
@@ -51,7 +51,7 @@ export default function HaberDetay({ haber, onClose }: HaberDetayProps) {
         {/* İçerik */}
         <div className="p-6">
           <p className="text-xs text-gray-400 mb-3">
-            {kategoriLabel[haber.kategori]} &middot; {date}
+            {tagLabel[haber.tag]} &middot; {date}
           </p>
           <h2 className="text-xl font-bold text-gray-900 mb-4 leading-snug">{haber.baslik}</h2>
           <p className="text-gray-700 leading-relaxed text-[0.95rem]">{haber.aciklama}</p>

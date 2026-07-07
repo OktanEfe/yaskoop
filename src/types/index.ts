@@ -16,16 +16,20 @@ export interface NewsItem {
   aciklama: string;
   tarih: string;
   kategori: 'haber' | 'etkinlik' | 'gezi';
+  tag: 'haber' | 'duyuru' | 'etkinlik';
   resimler: string[];
 }
 
 export interface Member {
   id: string;
-  name: string;
+  isim: string;
+  sirket: string;
+  unvan: string;
   logo: string;
+  foto?: string;
+  tanitimYazisi?: string;
   website?: string;
   bio?: string;
-  photo?: string;
 }
 
 export interface GalleryImage {
@@ -33,6 +37,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
+  size?: 'buyuk' | 'normal';
 }
 
 export interface ActivityArea {
@@ -40,6 +45,57 @@ export interface ActivityArea {
   baslik: string;
   aciklama: string;
   icon: string;
+}
+
+export interface HeroSection {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface KurulusHikayesi {
+  title: string;
+  paragraphs: string[];
+}
+
+export interface CorporatePhoto {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface TimelineItem {
+  id: string;
+  yil: string;
+  baslik: string;
+  aciklama: string;
+}
+
+export interface ValueItem {
+  id: string;
+  baslik: string;
+  aciklama: string;
+}
+
+export interface BoardMember {
+  id: string;
+  isim: string;
+  unvan: string;
+  bio: string;
+}
+
+export interface CertificateItem {
+  id: string;
+  baslik: string;
+  bilgi: string;
+}
+
+export interface CtaData {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonHref: string;
 }
 
 export interface StatItem {
