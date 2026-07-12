@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import type { HeroSlide as HeroSlideType } from '@/types';
 
@@ -11,7 +13,7 @@ export default function HeroSlide({ slide, isActive, priority = false }: HeroSli
   return (
     <div
       className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-        isActive ? 'opacity-100' : 'opacity-0'
+        isActive ? 'opacity-100 z-0' : 'opacity-0 -z-10'
       }`}
       aria-hidden={!isActive}
     >
@@ -20,11 +22,10 @@ export default function HeroSlide({ slide, isActive, priority = false }: HeroSli
         alt={slide.heading}
         fill
         priority={priority}
-        className="object-cover"
+        className="object-cover transform scale-100"
         sizes="100vw"
       />
-      {/* Gradient overlay — sakin, aşırı karartmayan */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/25 to-black/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/60" />
     </div>
   );
 }

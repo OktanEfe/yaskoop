@@ -10,9 +10,16 @@
   --color-dark-gray: #1f1f1f;
   --color-accent: #2a6119;
   --color-accent-hover: #1e4712;
+  --color-accent-text: #34d399;
 
   /* Font */
   --font-sans: var(--font-inter);
+}
+
+@layer utilities {
+  .text-accent {
+    color: var(--color-accent-text);
+  }
 }
 
 /* Animasyonlar */

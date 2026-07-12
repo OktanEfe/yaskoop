@@ -12,7 +12,7 @@ const tagConfig: Record<
 > = {
   haber:    { label: 'Haber',    className: 'bg-blue-50 text-blue-700' },
   etkinlik: { label: 'Etkinlik', className: 'bg-accent/10 text-accent' },
-  duyuru:   { label: 'Duyuru',   className: 'bg-emerald-50 text-emerald-700' },
+  duyuru:   { label: 'Duyuru',   className: 'bg-emerald-50 text-accent' },
 };
 
 export default function HaberCard({ haber, onClick }: HaberCardProps) {

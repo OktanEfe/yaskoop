@@ -35,7 +35,7 @@ export default function IletisimForm() {
   if (submitted) {
     return (
       <div className="rounded-[1.75rem] border border-neutral-200 bg-emerald-50 p-8 text-center">
-        <p className="text-emerald-900 font-semibold text-xl mb-2">Mesajınız alındı!</p>
+        <p className="text-accent font-semibold text-xl mb-2">Mesajınız alındı!</p>
         <p className="text-neutral-600 text-sm">En kısa sürede size geri dönülecektir.</p>
       </div>
     );
@@ -112,7 +112,7 @@ export default function IletisimForm() {
         />
       </div>
 
-      <Button type="submit" variant="primary" size="md" className="w-full rounded-full py-4">
+      <Button type="submit" variant="primary" size="lg" className="w-full">
         Gönder
       </Button>
     </form>

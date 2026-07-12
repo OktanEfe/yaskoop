@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import Button from '@/components/ui/Button';
 import { uyeler } from '@/lib/data/uyeler';
 
 export default function UyeLogoSeridi() {
@@ -62,25 +63,22 @@ export default function UyeLogoSeridi() {
         </div>
 
         <div className="mt-14 md:mt-20 flex justify-center">
-          <Link
-            href="/uyeler"
-            className="group relative inline-flex items-center gap-3 border border-neutral-200/80 rounded-full pl-6 pr-5 py-3 text-[13px] font-bold tracking-wide text-neutral-800 shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-transparent hover:text-white hover:shadow-[0_12px_24px_rgba(42,97,25,0.25)] active:scale-[0.98] transition-all duration-300 shrink-0 select-none overflow-hidden"
-          >
-            <span className="absolute inset-0 bg-accent transform scale-x-0 origin-left transition-transform duration-500 ease-out group-hover:scale-x-100 -z-10 rounded-full" />
-            
-            <span className="relative z-10">Tüm Ortakları İncele</span>
-            <div className="relative z-10 flex items-center justify-center w-5 h-5 rounded-full bg-neutral-50 text-neutral-800 group-hover:bg-white group-hover:text-accent transition-colors duration-300">
-              <svg 
-                width="14" 
-                height="14" 
-                viewBox="0 0 16 16" 
-                fill="none" 
-                className="transition-transform duration-300 transform group-hover:translate-x-0.5"
-              >
-                <path d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </Link>
+          <Button asChild variant="primary" size="md">
+            <Link href="/uyeler">
+              <span>Tüm Ortakları İncele</span>
+              <div className="flex items-center justify-center w-5 h-5 rounded-full bg-neutral-50 text-neutral-800 group-hover:bg-white group-hover:text-accent transition-colors duration-300">
+                <svg 
+                  width="14" 
+                  height="14" 
+                  viewBox="0 0 16 16" 
+                  fill="none" 
+                  className="transition-transform duration-300 transform group-hover:translate-x-0.5"
+                >
+                  <path d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

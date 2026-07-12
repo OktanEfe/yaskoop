@@ -1,6 +1,4 @@
-import HakkimizdaHero from '@/components/hakkimizda/HakkimizdaHero';
-import KurulusHikayesi from '@/components/hakkimizda/KurulusHikayesi';
-import KurumsalFoto from '@/components/hakkimizda/KurumsalFoto';
+import HakkimizdaTanitim from '@/components/hakkimizda/HakkimizdaTanitim';
 import NelerYapiyoruz from '@/components/hakkimizda/NelerYapiyoruz';
 import Vizyon from '@/components/hakkimizda/Vizyon';
 import TarihceZamanTuneli from '@/components/hakkimizda/TarihceZamanTuneli';
@@ -23,10 +21,8 @@ export const metadata = { title: 'Hakkımızda | Yaskoop' };
 
 export default function HakkimizdaPage() {
   return (
-    <div className="pt-[72px]">
-      <HakkimizdaHero hero={hakkimizdaHero} />
-      <KurulusHikayesi story={kurulusHikayesi} />
-      <KurumsalFoto photo={kurumsalFoto} />
+    <>
+      <HakkimizdaTanitim hero={hakkimizdaHero} story={kurulusHikayesi} photo={kurumsalFoto} />
       <TarihceZamanTuneli items={tarihceZamanTuneli} />
       <Degerlerimiz values={degerlerimiz} />
       <NelerYapiyoruz />
@@ -34,6 +30,6 @@ export default function HakkimizdaPage() {
       <YonetimKurulu members={yonetimKurulu} />
       <SertifikalarBelgeler documents={sertifikalarBelgeler} />
       <OrtakOlCTA cta={ortakOlCTA} />
-    </div>
+    </>
   );
 }

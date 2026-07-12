@@ -64,7 +64,7 @@ export default function GaleriGrid() {
         {galeriGorseller.slice(0, 4).map((image, idx) => renderGalleryItem(image, idx))}
 
         <div className="col-span-2 rounded-[2rem] bg-emerald-50 border border-emerald-100 p-8 text-neutral-900 shadow-sm md:col-span-3 xl:col-span-4">
-          <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.23em] text-emerald-700 mb-4">
+          <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.23em] text-accent mb-4">
             Üretim Hikayesi
           </span>
           <p className="text-xl font-semibold leading-9 tracking-tight">

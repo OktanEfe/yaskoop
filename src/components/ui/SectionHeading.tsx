@@ -14,20 +14,22 @@ export default function SectionHeading({
   className = '',
 }: SectionHeadingProps) {
   return (
-    <div className={`mb-12 ${center ? 'text-center' : ''} ${className}`}>
+    <div className={`flex flex-col gap-4 ${center ? 'items-center text-center' : 'items-start'} ${className}`}>
       <h2
-        className={`text-3xl md:text-4xl font-bold tracking-tight leading-tight ${
-          light ? 'text-white' : 'text-gray-900'
+        className={`text-3xl md:text-[2.6rem] font-bold tracking-tight leading-[1.15] ${
+          light ? 'text-white' : 'text-[#14180F]'
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-3 text-base ${light ? 'text-white/70' : 'text-gray-500'}`}>
+        <p className={`max-w-3xl text-[16px] md:text-[18px] leading-relaxed font-light tracking-wide ${
+          light ? 'text-white/60' : 'text-neutral-500'
+        }`}>
           {subtitle}
         </p>
       )}
-      <div className={`mt-5 h-0.5 w-14 bg-accent ${center ? 'mx-auto' : ''}`} />
+      {/* Çiğ duran renkli çizgi yerine, Apple tarzı temiz bir boşluk ve minimal hiyerarşi tercih edildi */}
     </div>
   );
 }

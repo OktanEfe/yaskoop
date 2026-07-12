@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import { iletisimCta } from '@/lib/data/home';
 
 export default function IletisimCTA() {
@@ -22,23 +23,22 @@ export default function IletisimCTA() {
           {iletisimCta.aciklama}
         </p>
         
-        <Link 
-          href={iletisimCta.ctaHref} 
-          className="group relative inline-flex items-center gap-3 bg-accent text-white rounded-full pl-7 pr-6 py-4 mt-10 text-[14px] font-bold tracking-wide shadow-[0_10px_30px_rgba(42,97,25,0.2)] hover:bg-accent-hover hover:shadow-[0_16px_36px_rgba(42,97,25,0.3)] active:scale-[0.98] transition-all duration-300 select-none overflow-hidden"
-        >
-          <span>{iletisimCta.ctaLabel}</span>
-          <div className="flex items-center justify-center w-5 h-5 rounded-full bg-white/20 text-white transition-colors duration-300">
-            <svg 
-              width="12" 
-              height="12" 
-              viewBox="0 0 16 16" 
-              fill="none" 
-              className="transition-transform duration-300 transform group-hover:translate-x-0.5"
-            >
-              <path d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </Link>
+        <Button asChild variant="primary" size="lg" className="mt-10">
+          <Link href={iletisimCta.ctaHref}>
+            <span>{iletisimCta.ctaLabel}</span>
+            <div className="flex items-center justify-center w-5 h-5 rounded-full bg-neutral-50 text-neutral-800 group-hover:bg-white group-hover:text-accent transition-colors duration-300">
+              <svg 
+                width="12" 
+                height="12" 
+                viewBox="0 0 16 16" 
+                fill="none" 
+                className="transition-transform duration-300 transform group-hover:translate-x-0.5"
+              >
+                <path d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </Link>
+        </Button>
       </div>
     </section>
   );

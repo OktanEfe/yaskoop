@@ -27,7 +27,7 @@ export default function Vizyon() {
 
           <div className="lg:col-span-7 lg:pl-12">
             <div className="flex flex-col items-start mb-8">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400 mb-6 shadow-sm backdrop-blur-sm select-none">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-6 shadow-sm backdrop-blur-sm select-none">
                 Gelecek Projeksiyonu
               </span>
               
@@ -40,7 +40,7 @@ export default function Vizyon() {
               </div>
             </div>
 
-            <div className="space-y-6 text-emerald-100/70 leading-[1.75] text-[1.05rem] font-normal tracking-tight">
+            <div className="space-y-6 text-accent leading-[1.75] text-[1.05rem] font-normal tracking-tight">
               <p className="text-white text-[1.15rem] leading-[1.65] font-medium tracking-wide">
                 Yaskoop&apos;un vizyonu, süs bitkileri üretiminde uluslararası standartları yakalamış,
                 çevreye duyarlı ve sürdürülebilir bir kooperatif modeli oluşturmaktır.
@@ -52,7 +52,7 @@ export default function Vizyon() {
                 ve üyelerimizin refahını yükseltmek önceliklerimiz arasındadır.
               </p>
               
-              <p className="border-t border-white/[0.06] pt-6 text-emerald-400/90 font-medium">
+              <p className="border-t border-white/[0.06] pt-6 text-accent font-medium">
                 Yerli üreticinin gücünü birleştirerek ulusal ve uluslararası ölçekte saygın bir
                 marka olmayı amaçlıyoruz.
               </p>

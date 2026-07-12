@@ -19,7 +19,7 @@ export default function IletisimBilgi() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-600 mb-2">Telefon</h3>
             <a
               href="tel:+905352936007"
-              className="text-neutral-700 text-sm leading-7 hover:text-emerald-700 transition-colors"
+              className="text-neutral-700 text-sm leading-7 hover:text-accent transition-colors"
             >
               +(90) 535 293 60 07
             </a>
@@ -32,7 +32,7 @@ export default function IletisimBilgi() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-600 mb-2">E-posta</h3>
             <a
               href="mailto:info@yaskoop.com"
-              className="text-neutral-700 text-sm leading-7 hover:text-emerald-700 transition-colors"
+              className="text-neutral-700 text-sm leading-7 hover:text-accent transition-colors"
             >
               info@yaskoop.com
             </a>
