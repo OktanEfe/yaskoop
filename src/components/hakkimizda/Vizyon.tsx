@@ -13,15 +13,19 @@ export default function Vizyon() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           
           <div className="lg:col-span-5 flex justify-center order-last lg:order-first">
-            <div className="relative w-full max-w-[400px] lg:max-w-[440px] aspect-square rounded-[2.5rem] overflow-hidden bg-white/[0.02] border border-white/[0.05] shadow-[0_32px_70px_-20px_rgba(0,0,0,0.3)] group backdrop-blur-[2px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-neutral-950/40 z-10 pointer-events-none" />
+            <div className="group relative aspect-[4/5] w-full max-w-[400px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.02] shadow-[0_32px_70px_-20px_rgba(0,0,0,0.3)] lg:max-w-[440px]">
+              <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#09190e]/65 via-transparent to-transparent" />
               <Image
-                src="/vizyon222.png"
-                alt="Yaskoop Vizyon"
+                src="/images/about/vizyon.jpg"
+                alt="Süs bitkisinin kırmızı meyveleri ve yeşil yaprakları"
                 fill
-                className="object-cover p-10 transform scale-[0.92] group-hover:scale-[0.96] transition-transform duration-700 ease-out brightness-0 invert opacity-85"
+                priority
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
+              <span className="absolute bottom-6 left-6 z-20 rounded-full border border-white/20 bg-black/20 px-4 py-2 text-xs font-medium text-white backdrop-blur">
+                Doğadan ilham alan üretim
+              </span>
             </div>
           </div>
 
@@ -33,15 +37,15 @@ export default function Vizyon() {
               
               <div className="w-full [&_h2]:text-4xl [&_h2]:md:text-[3.25rem] [&_h2]:font-bold [&_h2]:tracking-[-0.03em] [&_h2]:text-white [&_h2]:leading-[1.12]">
                 <SectionHeading
-                  title="Vizyonumuz"
-                  subtitle="Vizyon & Misyon"
+                    title="Geleceğe birlikte kök salıyoruz."
+                    subtitle="Vizyonumuz"
                   light
                 />
               </div>
             </div>
 
-            <div className="space-y-6 text-accent leading-[1.75] text-[1.05rem] font-normal tracking-tight">
-              <p className="text-white text-[1.15rem] leading-[1.65] font-medium tracking-wide">
+            <div className="space-y-6 text-[#cbd9c7] text-lg leading-8 font-normal tracking-tight md:text-xl md:leading-9">
+              <p className="text-white text-xl font-medium leading-9 tracking-wide md:text-2xl">
                 Yaskoop&apos;un vizyonu, süs bitkileri üretiminde uluslararası standartları yakalamış,
                 çevreye duyarlı ve sürdürülebilir bir kooperatif modeli oluşturmaktır.
               </p>
@@ -52,7 +56,7 @@ export default function Vizyon() {
                 ve üyelerimizin refahını yükseltmek önceliklerimiz arasındadır.
               </p>
               
-              <p className="border-t border-white/[0.06] pt-6 text-accent font-medium">
+              <p className="border-t border-white/10 pt-6 font-medium text-[#d8e6ab]">
                 Yerli üreticinin gücünü birleştirerek ulusal ve uluslararası ölçekte saygın bir
                 marka olmayı amaçlıyoruz.
               </p>

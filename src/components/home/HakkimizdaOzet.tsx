@@ -7,7 +7,7 @@ import { hakkimizdaOzet } from '@/lib/data/home';
 
 export default function HakkimizdaOzet() {
   return (
-    <section className="relative py-24 md:py-40 bg-[#FFFFFF] overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#fbfcf7] to-[#eef3e8] py-24 md:py-36">
       {/* Premium Arka Plan Detayı: İnce minimal grid çizgileri */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#E5E5E5_1px,transparent_1px),linear-gradient(to_bottom,#E5E5E5_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] opacity-40 pointer-events-none" />
 
@@ -21,10 +21,10 @@ export default function HakkimizdaOzet() {
 
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_8px_30px_rgba(0,0,0,0.02)] border border-[#E5E5E5]">
               <Image
-                src="/images/hakkimizda-ozet.jpg"
+                src="/images/about/hakkimizda.jpeg"
                 alt="Yaskoop Üretim Tesisleri ve Kurumsal Yapı"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-102"
+                className="object-cover transition-transform duration-700 hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
               />
@@ -47,18 +47,18 @@ export default function HakkimizdaOzet() {
           {/* Sağ Kolon: Kurumsal Metin Tarafı */}
           <div className="lg:col-span-7 lg:pl-16 order-1 lg:order-2 flex flex-col items-start">
             {/* Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E5E5E5] bg-[#F5F5F4] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#34D399] mb-6 shadow-sm select-none">
-              Kurumsal Kimlik ve Yapı
+            <span className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-[#d6e0cb] bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#426b39] shadow-sm">
+              Yalova’dan, doğayla birlikte
             </span>
 
             {/* Başlık - Resmi ve Güçlü Kooperatif Vurgusu */}
-            <h2 className="text-3xl md:text-[2.75rem] font-bold tracking-[-0.03em] text-[#14180F] leading-[1.15] max-w-xl">
-              Birlikte Üretim, Sürdürülebilir Gelecek
+            <h2 className="max-w-2xl text-4xl font-semibold leading-[1.06] tracking-[-0.05em] text-[#173622] md:text-[3.55rem]">
+              Güçlü kökler. Daha yeşil bir gelecek.
             </h2>
 
             {/* Açıklama - Resmi Kurumsal Dil */}
-            <p className="mt-6 text-[15px] md:text-[16px] leading-[1.75] text-[#6B6B6B] font-normal max-w-xl tracking-wide">
-              Yaskoop, tarımsal kalkınma ve kolektif üretim ilkeleri doğrultusunda, süs bitkileri sektöründe faaliyet gösteren üreticileri tek bir çatı altında birleştiren resmi bir işletme kooperatifidir. Ortak akıl, uluslararası kalite standartları ve şeffaf yönetim yapılanmasıyla, yerli üretimin gücünü kurumsal bir vizyonla yarınlara taşıyoruz.
+            <p className="mt-7 max-w-2xl text-base leading-8 text-[#4f6252] md:text-lg md:leading-9">
+              {hakkimizdaOzet.aciklama}
             </p>
 
             {/* Premium CTA Buton (Orijinal Buton Yapısı ve Hover Efekti Korundu) */}

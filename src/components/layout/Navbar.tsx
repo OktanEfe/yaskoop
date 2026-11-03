@@ -2,12 +2,15 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { navItems } from '@/lib/navigation';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const isHome = usePathname() === '/';
+  const compact = scrolled || !isHome;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,40 +31,37 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Tıklama bloklama hatasını çözmek için pointer-events-none kaldırıldı veya dinamik yönetildi */}
-      <div className="fixed top-0 left-0 w-full z-40 flex justify-center p-0 md:p-4 transition-all duration-500">
+      <div className="fixed left-0 top-0 z-40 flex w-full justify-center p-3 transition-all duration-500 md:p-4">
         <nav
-          className={`w-full transition-all duration-500 ease-out items-center ${
-            scrolled
-              ? 'max-w-[850px] bg-[#14180F]/85 backdrop-blur-xl border border-white/[0.08] shadow-[0_24px_50px_-12px_rgba(0,0,0,0.4)] rounded-full px-6 py-2.5 mt-3'
-              : 'max-w-7xl bg-transparent border-b border-transparent px-6 lg:px-12 py-8 mt-0'
+          className={`w-full items-center transition-all duration-500 ease-out ${
+            compact
+              ? 'max-w-7xl rounded-full border border-white/10 bg-[#183724]/95 px-5 py-2.5 shadow-[0_12px_35px_rgba(10,30,18,0.2)] backdrop-blur-xl md:px-7'
+              : 'max-w-7xl rounded-full border border-transparent bg-transparent px-3 py-3 md:px-6 md:py-5'
           }`}
         >
           <div className="flex items-center justify-between gap-4">
             
             {/* Logo Alanı */}
-            <Link href="/" className="flex items-center transition-all duration-500 hover:opacity-90 shrink-0 select-none">
+            <Link href="/" aria-label="Yaskoop ana sayfa" className="flex shrink-0 select-none items-center transition-all duration-500 hover:opacity-90">
               <Image
-                src="/logo/logo222.png"
-                alt="Yaskoop Süs Bitkileri Üretim Kooperatifi"
-                width={160}
-                height={52}
-                className={`w-auto object-contain transition-all duration-500 brightness-0 invert ${
-                  scrolled ? 'h-9 lg:h-10' : 'h-14 lg:h-16'
-                }`}
+                src="/logo/logo-white.png"
+                alt="Yaskoop"
+                width={92}
+                height={92}
+                className="h-14 w-14 object-contain transition-all duration-500 sm:h-[4.5rem] sm:w-[4.5rem]"
                 priority
               />
             </Link>
 
             {/* Masaüstü Navigasyon Linkleri */}
             <ul className={`hidden md:flex items-center transition-all duration-500 ${
-              scrolled ? 'gap-6 lg:gap-7' : 'gap-8 lg:gap-10'
+              compact ? 'gap-5 lg:gap-8' : 'gap-6 lg:gap-9'
             }`}>
               {mainItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group relative py-2 text-[14px] lg:text-[15px] tracking-wide font-medium text-white/80 hover:text-white transition-colors duration-300"
+                    className="group relative py-2 text-[13px] font-medium tracking-wide text-white/85 transition-colors duration-300 hover:text-white lg:text-[14px]"
                   >
                     {item.label}
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1.5px] w-0 rounded-full transition-all duration-300 ease-out group-hover:w-full bg-[#34D399]" />
@@ -76,9 +76,9 @@ export default function Navbar() {
                 <Link
                   href={contactItem.href}
                   className={`inline-flex items-center justify-center rounded-full font-semibold tracking-wide transition-all duration-500 active:scale-[0.98] whitespace-nowrap ${
-                    scrolled
-                      ? 'bg-white text-[#14180F] hover:bg-neutral-100 px-5 py-2 text-[13px] shadow-sm'
-                      : 'bg-[#2A6119] text-white hover:bg-[#1E4712] px-6 py-2.5 text-[14px] border border-white/5'
+                      compact
+                        ? 'bg-[#d6e8c8] px-5 py-2 text-[13px] text-[#183724] shadow-sm hover:bg-white'
+                        : 'border border-white/25 bg-white/10 px-6 py-2.5 text-[14px] text-white backdrop-blur-sm hover:bg-white/20'
                   }`}
                 >
                   {contactItem.label}
@@ -89,6 +89,8 @@ export default function Navbar() {
             {/* Mobil Menü Tetikleyici Buton */}
             <button
               onClick={() => setMenuOpen(true)}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
               className="md:hidden flex items-center justify-center w-11 h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-all active:scale-95"
               aria-label="Menüyü aç"
             >
@@ -103,7 +105,8 @@ export default function Navbar() {
 
       {/* Tam Ekran Mobil Menü Katmanı */}
       <div
-        className={`fixed inset-0 bg-[#14180F] z-[150] md:hidden flex flex-col justify-between p-8 transition-all duration-500 ease-in-out ${
+        id="mobile-navigation"
+        className={`fixed inset-0 z-[150] flex flex-col justify-between bg-[#14291c] p-8 transition-all duration-500 ease-in-out md:hidden ${
           menuOpen
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-6 pointer-events-none'
@@ -111,13 +114,20 @@ export default function Navbar() {
       >
         {/* Üst Bar */}
         <div className="flex items-center justify-between w-full">
-          <Image
-            src="/logo/logo222.png"
-            alt="Yaskoop"
-            width={140}
-            height={46}
-            className="h-10 w-auto brightness-0 invert object-contain"
-          />
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Yaskoop ana sayfa"
+            className="flex min-w-0 flex-1 items-center"
+          >
+            <Image
+              src="/logo/logo-white.png"
+              alt="Yaskoop"
+              width={88}
+              height={88}
+              className="h-14 w-14 shrink-0 object-contain"
+            />
+          </Link>
           <button
             onClick={() => setMenuOpen(false)}
             className="flex items-center justify-center w-11 h-11 rounded-full border border-white/10 text-white/80 transition-colors active:bg-white/5"

@@ -53,7 +53,11 @@ export default function GaleriGrid() {
   const renderGalleryItem = (image: GalleryImage, index: number) => {
     return (
       <div key={image.id} className="overflow-hidden rounded-[1.75rem] aspect-[4/5]">
-        <GaleriItem image={image} onClick={() => setLightbox({ image, index })} />
+        <GaleriItem
+          image={image}
+          onClick={() => setLightbox({ image, index })}
+          priority={index === 0}
+        />
       </div>
     );
   };
@@ -63,18 +67,21 @@ export default function GaleriGrid() {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
         {galeriGorseller.slice(0, 4).map((image, idx) => renderGalleryItem(image, idx))}
 
-        <div className="col-span-2 rounded-[2rem] bg-emerald-50 border border-emerald-100 p-8 text-neutral-900 shadow-sm md:col-span-3 xl:col-span-4">
-          <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.23em] text-accent mb-4">
-            Üretim Hikayesi
-          </span>
-          <p className="text-xl font-semibold leading-9 tracking-tight">
-            “Hasat sürecinde her mevsim, toprağın sesi ve ortak emeğin ritmiyle ilerliyoruz. Her fotoğraf
-            bizim için bir mevsimin ortak belleğini saklıyor.”
-          </p>
-          <p className="mt-4 text-sm leading-7 text-neutral-600">
-            {/* TODO: Galeriye özgün bir ortak üretici sözü veya sezon anlatımı ekleyin. */}
-            Bu alan, görsel akışı kırarak okuyucuya sahadan kısa bir anlatı sunar.
-          </p>
+        <div className="relative col-span-2 isolate overflow-hidden rounded-[2rem] bg-[#173624] px-7 py-9 text-white shadow-[0_22px_60px_rgba(23,54,36,0.14)] sm:px-10 sm:py-11 md:col-span-3 xl:col-span-4">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_90%_10%,rgba(190,221,157,0.18),transparent_35%),linear-gradient(125deg,#173624,#254a30)]" />
+          <div className="pointer-events-none absolute -right-10 -top-20 -z-10 h-64 w-64 rounded-full border border-white/[0.08] sm:h-80 sm:w-80" />
+          <div className="grid gap-6 md:grid-cols-[auto_1fr] md:items-start md:gap-8">
+            <span className="font-serif text-7xl leading-[0.7] text-[#d8e6ab] sm:text-8xl" aria-hidden="true">“</span>
+            <div className="max-w-4xl">
+              <p className="text-xl font-medium leading-8 tracking-[-0.02em] text-white sm:text-2xl sm:leading-10 lg:text-[1.75rem]">
+                Her fide, Yalova’nın bereketli toprağından başlayan ortak bir emeğin izini taşır. Üretimden hasada uzanan her adımda, yarına daha yeşil bir iz bırakmak için çalışıyoruz.
+              </p>
+              <div className="mt-6 flex items-center gap-3 text-xs font-medium tracking-wide text-white/65 sm:text-sm">
+                <span className="h-px w-8 bg-[#d8e6ab]/70" />
+                Yaskoop üretiminden kareler
+              </div>
+            </div>
+          </div>
         </div>
 
         {galeriGorseller.slice(4).map((image, idx) => renderGalleryItem(image, idx + 4))}
@@ -110,6 +117,7 @@ export default function GaleriGrid() {
               alt={lightbox.image.alt}
               width={1200}
               height={900}
+              sizes="90vw"
               className="max-h-[85vh] max-w-[90vw] w-auto h-auto object-contain rounded-lg"
             />
             {lightbox.image.caption && (

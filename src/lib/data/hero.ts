@@ -2,18 +2,18 @@ import type { HeroSlide } from '@/types';
 
 export const heroSlides: HeroSlide[] = [
   {
-    image: '/hero.jpg',
-    heading: 'Kooperatif Gücüyle Büyüyen Bir Topluluk',
-    subtext: 'Süs bitkilerinde ortak emeğin gücüyle, yerelden dünyaya...',
+    image: '/images/hero/hero.jpg',
+    heading: 'Doğanın en güzel hâli, Yalova’da yetişiyor.',
+    subtext: 'On kurucu ortağın emeğiyle, Yalova’nın bereketli üretiminden dünyaya uzanan bir yolculuk.',
   },
   {
-    image: '/galeri1.jpeg',
-    heading: 'Kaliteli Üretim, Güçlü Dayanışma',
-    subtext: "Yalova'nın verimli topraklarından dünyaya uzanan üretim ağı",
+    image: '/images/hero/PHOTO-2025-09-03-19-41-09.jpg',
+    heading: 'Her fidanda emek, her üretimde ortaklık.',
+    subtext: 'Köklü üretici deneyimini modern tarım teknikleriyle buluşturuyoruz.',
   },
   {
-    image: '/galeri3.jpeg',
-    heading: 'Doğaya Duyarlı, Geleceğe Hazır',
-    subtext: 'Sürdürülebilir tarım anlayışıyla bugünü ve yarını şekillendiriyoruz',
+    image: '/images/hero/PHOTO-2025-09-03-19-41-10.jpg',
+    heading: 'Yalova’dan dünyaya uzanan yeşil bir bağ.',
+    subtext: 'Bölgenin bitki çeşitliliğini güvenilir, sürdürülebilir üretimle geleceğe taşıyoruz.',
   },
 ];

@@ -36,6 +36,7 @@ export default function HaberDetay({ haber, onClose }: HaberDetayProps) {
             src={haber.resimler[0]}
             alt={haber.baslik}
             fill
+            sizes="(max-width: 672px) 90vw, 672px"
             className="object-cover"
           />
           <button
@@ -64,6 +65,7 @@ export default function HaberDetay({ haber, onClose }: HaberDetayProps) {
                     src={src}
                     alt={`${haber.baslik} ${i + 2}`}
                     fill
+                    sizes="(max-width: 672px) 45vw, 336px"
                     className="object-cover"
                   />
                 </div>

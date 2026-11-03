@@ -22,10 +22,11 @@ export default function HeroSlide({ slide, isActive, priority = false }: HeroSli
         alt={slide.heading}
         fill
         priority={priority}
-        className="object-cover transform scale-100"
+        className={`object-cover transition-transform duration-[8000ms] ease-out ${
+          isActive ? 'scale-105' : 'scale-100'
+        }`}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/60" />
     </div>
   );
 }

@@ -1,117 +1,86 @@
-'use client';
-
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { navItems } from '@/lib/navigation';
 
+const mainItems = navItems.filter((item) => item.href !== '/iletisim');
+
 export default function Footer() {
-  const currentYear = 2026;
-  
-  const mainItems = navItems.filter((item) => item.href !== '/iletisim');
-  const contactItem = navItems.find((item) => item.href === '/iletisim');
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#14180F] text-white border-t border-white/[0.05] overflow-hidden select-none">
-      {/* Kurumsal Mimariyi Destekleyen Geometrik Işık Sızıntıları */}
-      <div className="absolute top-0 left-1/3 w-[600px] h-[400px] bg-[#2A6119]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#059669]/6 rounded-full blur-[120px] pointer-events-none -z-10" />
+    <footer className="relative isolate overflow-hidden bg-[#10251a] text-white">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_0%,rgba(95,139,82,0.2),transparent_38%),linear-gradient(145deg,#10251a,#173624_60%,#10251a)]" />
+      <div className="pointer-events-none absolute -right-36 -top-56 -z-10 h-[34rem] w-[34rem] rounded-full border border-white/[0.06]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-12 relative z-10">
-        
-        {/* Üst Blok: Genişletilmiş ve Güçlendirilmiş Editoryal Düzen */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 pb-20 border-b border-white/[0.06]">
-          
-          {/* Sol Geniş Blok: Büyük Açıklama ve Kurumsal Kimlik */}
-          <div className="lg:col-span-6 flex flex-col items-start gap-8">
-            <Link href="/" className="flex items-center transition-opacity hover:opacity-90">
+      <div className="mx-auto max-w-7xl px-6 pb-7 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24">
+        <div className="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_1fr] lg:gap-16 lg:pb-16">
+          <div className="max-w-md">
+            <Link href="/" aria-label="Yaskoop ana sayfa" className="inline-flex items-center gap-3 transition-opacity hover:opacity-80">
               <Image
-                src="/logo/logo222.png"
-                alt="Yaskoop Süs Bitkileri Üretim Kooperatifi"
-                width={160}
-                height={54}
-                className="h-11 w-auto brightness-0 invert object-contain"
-                priority
+                src="/logo/logo-white.png"
+                alt="Yaskoop"
+                width={72}
+                height={72}
+                className="h-14 w-14 object-contain"
               />
+              <span className="text-xl font-semibold tracking-[0.18em]">YASKOOP</span>
             </Link>
-            {/* Kullanıcının Talebi Üzerine: Büyütülmüş, Vurgulu ve Editoryal Açıklama Metni */}
-            <p className="text-[17px] md:text-[19px] text-white/90 max-w-2xl leading-[1.65] tracking-tight font-normal">
-              Sınırlı Sorumlu Yalova Süs Bitkileri Üretim ve Pazarlama İşletme Kooperatifi, tarımsal kalkınma ilkelerini modern endüstri standartlarıyla birleştirerek yerli üretimin küresel pazardaki gücünü ve sürdürülebilirliğini temsil eder.
+            <p className="mt-6 text-sm leading-7 text-white/70 sm:text-base">
+              S.S. Yalova Süs Bitkileri İşletme Kooperatifi; köklü üreticileri,
+              bölgenin bitki çeşitliliğini ve sürdürülebilir üretim anlayışını
+              aynı çatı altında buluşturur.
             </p>
+            <Link
+              href="/iletisim"
+              className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full border border-white/20 px-5 text-sm font-semibold text-white transition hover:border-[#d8e6ab]/60 hover:bg-white/[0.06]"
+            >
+              Bizimle iletişime geçin
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
 
-          {/* Sağ Link Blokları Konteyneri */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-12 lg:pl-12">
-            
-            {/* Kurumsal Navigasyon */}
-            <div className="flex flex-col gap-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#34D399]">
-                Kurumsal Yapılanma
-              </span>
-              <ul className="flex flex-col gap-4 text-[14px] font-medium text-white/70">
-                {mainItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="hover:text-white transition-colors duration-300 flex items-center group">
-                      <span className="w-0 h-[1px] bg-white group-hover:w-2 mr-0 transition-all duration-300 group-hover:mr-2" />
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <nav aria-label="Alt menü">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#d8e6ab]">
+              Keşfedin
+            </h2>
+            <ul className="mt-6 space-y-4">
+              {mainItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-white"
+                  >
+                    <span className="h-px w-0 bg-[#d8e6ab] transition-all group-hover:w-3" />
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-            {/* Mevzuat ve Şeffaflık */}
-            <div className="flex flex-col gap-6">
-              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#34D399]">
-                Mevzuat ve İletişim
-              </span>
-              <ul className="flex flex-col gap-4 text-[14px] font-medium text-white/70">
-                {contactItem && (
-                  <li>
-                    <Link href={contactItem.href} className="text-white hover:text-[#34D399] transition-colors duration-300 font-semibold flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
-                      {contactItem.label} Merkezi
-                    </Link>
-                  </li>
-                )}
-                <li>
-                  <Link href="/kvkk" className="hover:text-white transition-colors duration-300">
-                    KVKK Aydınlatma Metni
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors duration-300">
-                    Gizlilik Politikası
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/kullanim-kosullari" className="hover:text-white transition-colors duration-300">
-                    Kullanım Şartları
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
+          <div>
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#d8e6ab]">
+              Bize ulaşın
+            </h2>
+            <address className="mt-6 space-y-4 not-italic text-sm leading-6 text-white/70">
+              <p>
+                Mehmet Akif Ersoy Mah. Namık Kemal Cad. No:2 İç Kapı No:3
+                <br />
+                Çiftlikköy / Yalova
+              </p>
+              <a className="block transition hover:text-white" href="tel:+905352936007">
+                +90 535 293 60 07
+              </a>
+              <a className="block transition hover:text-white" href="mailto:info@yaskoop.com.tr">
+                info@yaskoop.com.tr
+              </a>
+            </address>
           </div>
-
         </div>
 
-        {/* Tipografik Dev Arka Plan Logosu - Premium Kesim */}
-        <div className="pt-24 pb-14 flex flex-col items-center justify-center relative overflow-hidden select-none pointer-events-none">
-          <h1 className="text-[15vw] md:text-[12vw] font-bold tracking-[-0.04em] text-white/[0.012] leading-none uppercase text-center w-full font-sans">
-            YASKOOP
-          </h1>
-        </div>
-
-        {/* Alt Bilgi Barı - Bakanlık Standartları Vurgusu */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left text-[13px] text-white/50 font-normal tracking-wide border-t border-white/[0.04] pt-10">
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-            <p>&copy; {currentYear} Yaskoop Kooperatifi.</p>
-            <span className="hidden sm:inline text-white/20">|</span>
-            <p>Tüm hakları mahfuzdur.</p>
-          </div>
-          <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-medium border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.01]">
-            T.C. Tarım ve Orman Bakanlığı Mevzuatlarına Uygundur
-          </p>
+        <div className="flex flex-col items-center justify-between gap-4 pt-7 text-center text-xs text-white/50 sm:flex-row sm:text-left">
+          <p>© {year} S.S. Yalova Süs Bitkileri İşletme Kooperatifi</p>
+          <p>Yalova’da birlikte büyüyoruz.</p>
         </div>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import SectionHeading from '@/components/ui/SectionHeading';
+import Link from 'next/link';
 import type { HeroSection, KurulusHikayesi, CorporatePhoto } from '@/types';
 
 interface HakkimizdaTanitimProps {
@@ -13,110 +13,95 @@ interface HakkimizdaTanitimProps {
 export default function HakkimizdaTanitim({ hero, story, photo }: HakkimizdaTanitimProps) {
   return (
     <div className="w-full select-none selection:bg-[#14180F] selection:text-white font-sans">
-      
-      {/* ================= ÜST BÖLÜM: HIGH-END AYDINLIK MANİFESTO & KURUMSAL VERİ ALANI ================= */}
-      <section className="relative py-36 md:py-48 bg-white text-[#14180F] overflow-hidden">
-        
-        {/* Saf beyazlığı kıran ve kurumsal mimariyi destekleyen mikro grid dokusu */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#E5E5E5_1px,transparent_1px),linear-gradient(to_bottom,#E5E5E5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-[0.4] pointer-events-none -z-10" />
-        
-        {/* Derinlik katan kurumsal hafif geçiş dairesi */}
-        <div className="absolute top-1/3 left-1/4 w-[900px] h-[900px] bg-[#2A6119]/[0.015] rounded-full blur-[180px] pointer-events-none -z-10" />
+      <section className="relative isolate overflow-hidden bg-[#10251a] pb-20 pt-32 text-white md:pb-28 md:pt-40">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_35%,rgba(85,139,82,0.28),transparent_48%),linear-gradient(130deg,#10251a_15%,#183b29_100%)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          
-          {/* Asimetrik Premium Grid: Sol Sütun Baskın Kurumsal Alan */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-            
-            {/* Sol Odak (lg:col-span-7): Ana Başlık, Manifesto ve Resmi İstatistikler */}
-            <div className="lg:col-span-7 flex flex-col gap-10">
-              
-              {/* Çift Etiketli Üst Kurumsal Kimlik Şeridi */}
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#059669] px-3.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#34D399]">
-                  {hero.eyebrow}
-                </span>
-                <span className="text-[11px] font-medium tracking-wider text-[#6B6B6B] border-l border-[#E5E5E5] pl-3">
-                  Resmi Kooperatif Sicili
-                </span>
-              </div>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:gap-16 lg:px-12">
+          <div className="lg:col-span-6">
+            <h1 className="max-w-2xl text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-white sm:text-6xl md:text-7xl">
+              {hero.title}
+              <span className="mt-3 block text-[#cde0a5]">Yalova’dan, birlikte büyüyen bir hikâye.</span>
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-8 text-white/75 md:text-lg md:leading-9">
+              {hero.subtitle}
+            </p>
 
-              {/* Ana Başlık Alanı */}
-              <div className="text-[#14180F] [&_h2]:text-[#14180F] [&_h2]:tracking-tight [&_h2]:text-4xl md:[&_h2]:text-5xl md:[&_h2]:leading-[1.1] [&_h2]:font-bold">
-                <SectionHeading title={hero.title} subtitle="" light={false} />
-              </div>
-
-              {/* Genişletilmiş Editoryal Giriş Metni */}
-              <p className="text-[19px] md:text-[22px] font-light leading-relaxed text-[#14180F]/90 max-w-2xl">
-                {hero.subtitle} Toprağın kadim bilgisini, modern tarım teknolojileri ve şeffaf kooperatifçilik modeliyle yeniden yorumluyoruz.
-              </p>
-
-              {/* Kurumsal İstatistik Şeridi */}
-              <div className="pt-8 border-t border-[#E5E5E5] mt-4 grid grid-cols-3 gap-6 max-w-xl">
-                <div className="flex flex-col gap-1">
-                  <span className="text-3xl md:text-4xl font-bold tracking-tight text-[#2A6119]">1994</span>
-                  <span className="text-[11px] uppercase tracking-wider text-[#6B6B6B] font-medium">Kuruluş Yılı</span>
-                </div>
-                <div className="flex flex-col gap-1 border-l border-[#E5E5E5] pl-6">
-                  <span className="text-3xl md:text-4xl font-bold tracking-tight text-[#2A6119]">120+</span>
-                  <span className="text-[11px] uppercase tracking-wider text-[#6B6B6B] font-medium">Aktif Üretici</span>
-                </div>
-                <div className="flex flex-col gap-1 border-l border-[#E5E5E5] pl-6">
-                  <span className="text-3xl md:text-4xl font-bold tracking-tight text-[#2A6119]">450k m²</span>
-                  <span className="text-[11px] uppercase tracking-wider text-[#6B6B6B] font-medium">Üretim Alanı</span>
-                </div>
-              </div>
-
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/uyeler"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d8e6ab] px-6 text-sm font-semibold text-[#173622] transition-colors hover:bg-white"
+              >
+                Kurucu ortaklarımız
+              </Link>
+              <Link
+                href="/iletisim"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                İletişime geçin
+              </Link>
             </div>
 
-            {/* Sağ Odak (lg:col-span-5): Kırık Ritimli Kurumsal Kartlar ve Saha Fotoğrafı */}
-            <div className="lg:col-span-5 lg:pt-20 flex flex-col gap-8 w-full">
-              
-              {/* Misyon Kartı */}
-              <div className="p-6 rounded-2xl bg-[#F5F5F4] border border-[#E5E5E5] border-l-4 border-l-[#059669] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_12px_24px_-8px_rgba(0,0,0,0.04)]">
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#6B6B6B] block mb-2">Misyon & Gelecek</span>
-                <p className="text-[#14180F]/80 text-[15px] leading-relaxed font-normal">
-                  Her bir üretim aşamasında ekolojik dengeyi koruma misyonunu üstlenirken, sadece bugünün değil, yarının nesilleri için de yeşil bir gelecek inşa etmek adına Yalova ve çevre bölgelerdeki üreticilerimizle omuz omuza çalışıyoruz.
+            <div className="mt-12 grid max-w-lg grid-cols-3 border-t border-white/15 pt-6">
+              <div>
+                <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">2025</p>
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.13em] text-white/55 sm:text-xs">
+                  Kuruluş yılı
                 </p>
               </div>
-
-              {/* Kolektif Bilinç Kartı */}
-              <div className="p-6 rounded-2xl bg-[#F5F5F4] border border-[#E5E5E5] border-l-4 border-l-[#059669] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-[0_12px_24px_-8px_rgba(0,0,0,0.04)]">
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#6B6B6B] block mb-2">Kolektif Bilinç</span>
-                <p className="text-[#14180F]/80 text-[15px] leading-relaxed font-normal">
-                  Geleneksel tarımı teknolojik altyapıyla birleştirerek, yerel kalkınmanın uluslararası standartlarda bir modele dönüşebileceğini resmi mevzuatlarımız ışığında kanıtlıyoruz.
+              <div className="border-l border-white/15 pl-4 sm:pl-6">
+                <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">10</p>
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.13em] text-white/55 sm:text-xs">
+                  Kurucu ortak
                 </p>
               </div>
-
-              {/* Asimetrik Kurumsal Saha Fotoğraf Bloğu */}
-              {/* // TODO: Bu alana üretim sahası veya genel kuruldan üst düzey bir kurumsal fotoğraf yerleştirilecek */}
-              <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden border border-[#E5E5E5] p-2 bg-[#F5F5F4] group transition-all duration-500">
-                <div className="relative w-full h-full rounded-xl overflow-hidden bg-neutral-200 shadow-inner">
-                  <div className="absolute inset-0 bg-[#2A6119]/5 mix-blend-multiply z-10" />
-                  <div className="absolute inset-0 flex items-center justify-center text-[11px] font-medium tracking-widest text-[#6B6B6B] uppercase z-20">
-                    Kurumsal Üretim Sahası / Görsel Alanı
-                  </div>
-                </div>
+              <div className="border-l border-white/15 pl-4 sm:pl-6">
+                <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">Yalova</p>
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.13em] text-white/55 sm:text-xs">
+                  Üretimin merkezi
+                </p>
               </div>
-
             </div>
-
           </div>
-          
+
+          <div className="lg:col-span-6">
+            <div className="relative mx-auto max-w-xl">
+              <div className="absolute -inset-4 rounded-[2rem] border border-white/10 sm:-inset-5" />
+              <div className="group relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#254630] shadow-[0_30px_90px_rgba(0,0,0,0.35)] sm:rounded-[2rem]">
+                <Image
+                  src={photo.secondarySrc}
+                  alt={photo.secondaryAlt}
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  sizes="(max-width: 1024px) 90vw, 46vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d2017]/75 via-transparent to-transparent" />
+                <div className="absolute inset-x-5 bottom-5 sm:inset-x-7 sm:bottom-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d8e6ab]">
+                    Yalova’da üretim
+                  </p>
+                  <p className="mt-2 text-lg font-medium text-white sm:text-xl">
+                    Doğayla iç içe, ortak emekle büyüyen bir yapı.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ================= ALT BÖLÜM: DERİN ANTRASİT HİKAYEMİZ (STICKY GRID) ================= */}
-      <section className="relative py-32 md:py-48 bg-[#14180F] text-white overflow-hidden border-b border-white/[0.02]">
-        <div className="absolute top-0 right-1/4 w-[700px] h-[700px] bg-white/[0.01] rounded-full blur-[180px] pointer-events-none -z-10" />
+      {/* Kuruluş hikayesi */}
+      <section className="relative overflow-hidden bg-white py-20 text-[#193323] md:py-28">
+        <div className="pointer-events-none absolute -right-36 top-0 h-[34rem] w-[34rem] rounded-full bg-[#edf4e9] blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
             
             {/* Sol Kolon: Sayfa Kaydıkça Sabit Kalan Görsel Alanı */}
-            <div className="lg:col-span-5 w-full lg:sticky lg:top-36">
-              <div className="relative rounded-2xl overflow-hidden bg-white/[0.01] border border-white/[0.06] p-3 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-white/10">
-                <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#1D2118]">
+            <div className="w-full lg:sticky lg:top-36 lg:col-span-5">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-[#193323]/10 bg-white p-2 shadow-[0_24px_70px_rgba(25,51,35,0.1)] transition-all duration-500 hover:shadow-[0_30px_80px_rgba(25,51,35,0.14)]">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem] bg-[#edf2e8]">
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -129,48 +114,48 @@ export default function HakkimizdaTanitim({ hero, story, photo }: HakkimizdaTani
               </div>
               
               {photo.caption && (
-                <div className="mt-5 px-3 flex items-center gap-2.5 text-white/30 text-[13px] tracking-wide font-normal">
-                  <span className="w-1 h-1 rounded-full bg-white/20" />
+                <div className="mt-5 flex items-center gap-2.5 px-3 text-[13px] font-medium tracking-wide text-[#718071]">
+                  <span className="h-1 w-1 rounded-full bg-[#789078]" />
                   {photo.caption}
                 </div>
               )}
             </div>
 
             {/* Sağ Kolon: Hikayenin Akıcı Metinleri */}
-            <div className="lg:col-span-7 flex flex-col gap-12 lg:pt-2">
+            <div className="flex flex-col gap-10 lg:col-span-7 lg:pt-2">
               
               {/* Bölüm Başlığı */}
-              <div className="relative border-l-2 border-white/20 pl-6 md:pl-8">
-                <h3 className="text-2xl md:text-[2.5rem] font-bold tracking-[-0.03em] text-white leading-tight">
+              <div className="relative border-l-2 border-[#49724b] pl-6 md:pl-8">
+                <h3 className="text-2xl font-bold leading-tight tracking-[-0.03em] text-[#193323] md:text-[2.5rem]">
                   {story.title}
                 </h3>
               </div>
 
               {/* Metin Akışı */}
-              <div className="space-y-8 text-white/70 text-[17px] md:text-[19px] leading-[1.85] font-light tracking-wide text-justify md:text-left">
+              <div className="space-y-8 text-justify text-[17px] font-normal leading-[1.85] tracking-wide text-[#566557] md:text-left md:text-[19px]">
                 {story.paragraphs.map((paragraph, index) => (
                   <p 
                     key={index} 
-                    className="first-of-type:text-white first-of-type:text-[19px] md:first-of-type:text-[21px] first-of-type:font-normal first-of-type:leading-relaxed"
+                    className="first-of-type:text-[19px] first-of-type:font-medium first-of-type:leading-relaxed first-of-type:text-[#2e4833] md:first-of-type:text-[21px]"
                   >
                     {paragraph}
                   </p>
                 ))}
                 
-                <p className="pt-4 border-t border-white/[0.04] text-white/50 text-[15px] md:text-[16px] italic">
+                <p className="border-t border-[#193323]/10 pt-5 text-[15px] italic text-[#788579] md:text-[16px]">
                   Yalova&apos;nın köklü süs bitkileri üretim mirasını kolektif bir bilinçle yarınlara taşıyor, toprakla kurduğumuz şeffaf ve sürdürülebilir bağı her geçen gün daha da güçlendiriyoruz.
                 </p>
               </div>
 
               {/* Alt Bilgi Tablosu */}
-              <div className="border-t border-white/[0.06] pt-10 mt-6 grid grid-cols-2 gap-8">
+              <div className="mt-2 grid grid-cols-2 gap-6 border-t border-[#193323]/10 pt-8 sm:gap-8">
                 <div className="flex flex-col gap-2">
-                  <h5 className="text-[11px] font-bold uppercase tracking-widest text-white/40">Kurumsal Mevzuat</h5>
-                  <p className="text-white/90 text-[15px] font-medium tracking-wide">Uluslararası Tarım Standartları</p>
+                  <h5 className="text-[11px] font-bold uppercase tracking-widest text-[#849085]">Kurumsal Mevzuat</h5>
+                  <p className="text-[15px] font-medium tracking-wide text-[#2e4833]">Uluslararası Tarım Standartları</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h5 className="text-[11px] font-bold uppercase tracking-widest text-white/40">Operasyon Modeli</h5>
-                  <p className="text-white/90 text-[15px] font-medium tracking-wide">Sürdürülebilir Kolektif Kalkınma</p>
+                  <h5 className="text-[11px] font-bold uppercase tracking-widest text-[#849085]">Operasyon Modeli</h5>
+                  <p className="text-[15px] font-medium tracking-wide text-[#2e4833]">Sürdürülebilir Kolektif Kalkınma</p>
                 </div>
               </div>
 

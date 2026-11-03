@@ -1,7 +1,6 @@
 import type {
   ActivityArea,
   BoardMember,
-  CertificateItem,
   CorporatePhoto,
   CtaData,
   HeroSection,
@@ -14,22 +13,22 @@ export const hakkimizdaHero: HeroSection = {
   eyebrow: 'Kurumsal Hafıza',
   title: 'Hakkımızda',
   subtitle:
-    'Yaskoop, üretici ortakların gücünü birleştiren, sürdürülebilirlik ve dayanışma odaklı bir kooperatif modelidir.',
+    "S.S. Yalova Süs Bitkileri İşletme Kooperatifi, sürdürülebilir tarım ve yenilikçi peyzaj çözümleri üretmek amacıyla Yalova'nın merkezinde faaliyet göstermektedir.",
 };
 
 export const kurulusHikayesi: KurulusHikayesi = {
   title: 'Kuruluş Hikayemiz',
   paragraphs: [
-    "Yaskoop, Yalova'nın Çiftlikköy ilçesinde kurulmuş, süs bitkileri alanında faaliyet gösteren üretici ortakların bir araya gelerek oluşturduğu bir işletme kooperatifidir.",
-    'Amacımız birlikte üretmek, birlikte gelişmek ve dayanışma içinde büyümektir. Bu amaçla ortaklarımızın teknik bilgi ve tecrübesiyle üretim süreçlerini güçlendiriyoruz.',
-    'Sürdürülebilirlik, kalite ve çevreye duyarlılık ilkeleriyle hareket ediyoruz. Kooperatifçi birlikteliğin güçlendirilmesiyle yerel ekonomiye katkı sağlamak önceliklerimiz arasındadır.',
+    "S.S. Yalova Süs Bitkileri İşletme Kooperatifi, sürdürülebilir tarım ve yenilikçi peyzaj çözümleri üretmek amacıyla Yalova'nın merkezinde faaliyet göstermektedir. Kooperatifimiz, köklü üreticilerin bir araya gelmesiyle, bölgenin zengin bitki çeşitliliğini ve kalitesini modern tekniklerle birleştirmektedir. Ulusal ve uluslararası pazarda güvenilir bir tedarikçi olmayı vizyon edinen birlikteliğimiz doğanın güzelliğini işleyen üreticilerimizle daha yeşil bir gelecek için çalışmaya devam etmektedir.",
   ],
 };
 
 export const kurumsalFoto: CorporatePhoto = {
-  src: '/logo2.svg',
-  alt: 'Yaskoop Kooperatif Kurumsal Fotoğrafı',
-  caption: 'Cooperative facilities and member collaboration reflected in our visual identity.',
+  src: '/images/about/IMG_3487.JPG.jpeg',
+  alt: 'Fidanlıkta kasalarda yetiştirilen çilek fideleri',
+  secondarySrc: '/images/about/IMG_3486.JPG.jpeg',
+  secondaryAlt: 'Serada saksılarda yetişen süs bitkileri',
+  caption: 'Fidanlıkta kasalarda yetiştirilen çilek fideleri.',
 };
 
 export const tarihceZamanTuneli: TimelineItem[] = [
@@ -78,40 +77,22 @@ export const degerlerimiz: ValueItem[] = [
 
 export const yonetimKurulu: BoardMember[] = [
   {
-    id: 'mehmet-kaya',
-    isim: 'Mehmet Kaya',
-    unvan: 'Kooperatif Başkanı',
-    bio: 'Süs bitkileri üretiminde 15 yıllık tecrübeye sahip olan Mehmet Bey, kooperatif stratejilerini yönlendiriyor.',
+    id: 'nihal-baskan',
+    isim: 'Nihal BAŞKAN',
+    unvan: 'Yönetim Kurulu Başkanı',
+    bio: 'Kurucu ortak · Karagül Süs Bitkileri Yapı Tur. San. Tic. Ltd. Şti.',
   },
   {
-    id: 'ayse-ozcan',
-    isim: 'Ayşe Özcan',
-    unvan: 'Genel Sekreter',
-    bio: 'Üye ilişkileri ve idari süreçler konusunda koordinasyonu sağlayan kilit isim.',
+    id: 'ilhan-dinc',
+    isim: 'İlhan DİNÇ',
+    unvan: 'Yönetim Kurulu Başkan Yardımcısı',
+    bio: 'Kurucu ortak · İlhan Dinç Süs Bitkileri',
   },
   {
-    id: 'mustafa-emre',
-    isim: 'Mustafa Emre',
-    unvan: 'Üretim Sorumlusu',
-    bio: 'Üretim planlaması, kalite kontrol ve saha uygulamalarını yöneten ekip lideri.',
-  },
-];
-
-export const sertifikalarBelgeler: CertificateItem[] = [
-  {
-    id: 'ticaret-sicil',
-    baslik: 'Ticaret Sicil No',
-    bilgi: '123456 - Yalova Ticaret Odası kayıtlı.',
-  },
-  {
-    id: 'kooperatif-tuzugu',
-    baslik: 'Kooperatif Tüzüğü',
-    bilgi: 'Resmi kooperatif tüzüğü onaylı ve güncel kayıtlıdır.',
-  },
-  {
-    id: 'tesvik-belgesi',
-    baslik: 'Teşvik Belgesi',
-    bilgi: 'Sürdürülebilir üretim ve yerel kalkınma destekleri kapsamında belge sahibi.',
+    id: 'i-anil-ozkan',
+    isim: 'İ. Anıl ÖZKAN',
+    unvan: 'Yönetim Kurulu Başkan Yardımcısı',
+    bio: 'Kurucu ortak · Rasyonel Peyzaj Bitkileri Üretim ve Tic. Ltd. Şti.',
   },
 ];
 

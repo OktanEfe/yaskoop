@@ -6,7 +6,7 @@ import { iletisimCta } from '@/lib/data/home';
 
 export default function IletisimCTA() {
   return (
-    <section className="relative py-28 md:py-40 bg-white text-neutral-900 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#eef3e7] via-white to-white py-28 text-neutral-900 md:py-40">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-70 pointer-events-none -z-10" />
 
@@ -15,11 +15,11 @@ export default function IletisimCTA() {
           Geleceği Birlikte İnşa Edelim
         </span>
         
-        <h2 className="text-3xl md:text-[3.25rem] font-bold tracking-[-0.03em] leading-[1.12] text-neutral-900 max-w-2xl">
+        <h2 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#173622] md:text-6xl">
           {iletisimCta.baslik}
         </h2>
         
-        <p className="mt-6 text-neutral-500 text-base md:text-lg max-w-xl mx-auto font-normal leading-relaxed tracking-tight">
+        <p className="mx-auto mt-7 max-w-2xl text-lg font-normal leading-8 tracking-tight text-neutral-600 md:text-xl md:leading-9">
           {iletisimCta.aciklama}
         </p>
         

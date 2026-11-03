@@ -29,7 +29,7 @@ export default function SonHaberler() {
             <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-4 shadow-sm">
               Güncel Paylaşımlar
             </span>
-            <h2 className="text-3xl md:text-[2.75rem] font-bold tracking-[-0.03em] text-neutral-900 leading-[1.15]">
+            <h2 className="text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-[#193323] md:text-5xl">
               Haberler & Etkinlikler
             </h2>
           </div>
@@ -54,14 +54,11 @@ export default function SonHaberler() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {sonUcHaber.map((haber) => (
-            <div 
-              key={haber.id} 
-              className="group cursor-pointer bg-white rounded-[2rem] p-4 border border-neutral-100 hover:border-neutral-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.012)] hover:shadow-[0_24px_50px_-12px_rgba(0,0,0,0.07)] transition-all duration-500 transform hover:-translate-y-1.5 flex flex-col h-full"
-              onClick={() => setSelected(haber)}
+            <div
+              key={haber.id}
+              className="flex h-full flex-col"
             >
-              <div className="flex-1 flex flex-col">
-                <HaberCard haber={haber} onClick={setSelected} />
-              </div>
+              <HaberCard haber={haber} onClick={setSelected} />
             </div>
           ))}
         </div>

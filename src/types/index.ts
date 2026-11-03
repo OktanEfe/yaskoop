@@ -25,7 +25,7 @@ export interface Member {
   isim: string;
   sirket: string;
   unvan: string;
-  logo: string;
+  logo?: string;
   foto?: string;
   tanitimYazisi?: string;
   website?: string;
@@ -61,6 +61,8 @@ export interface KurulusHikayesi {
 export interface CorporatePhoto {
   src: string;
   alt: string;
+  secondarySrc: string;
+  secondaryAlt: string;
   caption?: string;
 }
 
@@ -82,12 +84,6 @@ export interface BoardMember {
   isim: string;
   unvan: string;
   bio: string;
-}
-
-export interface CertificateItem {
-  id: string;
-  baslik: string;
-  bilgi: string;
 }
 
 export interface CtaData {

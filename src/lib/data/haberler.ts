@@ -10,7 +10,7 @@ export const haberler: NewsItem[] = [
     tarih: '2025-09-10',
     kategori: 'haber',
     tag: 'haber',
-    resimler: ['/haber1_1.jpg', '/haber1_2.jpeg', '/haber1_3.png'],
+    resimler: ['/images/news/haber1_1.jpg', '/images/news/haber1_2.jpeg', '/images/news/haber1_3.png'],
   },
   {
     id: 'aronia-festivali-2025',
@@ -21,7 +21,7 @@ export const haberler: NewsItem[] = [
     tarih: '2025-09-14',
     kategori: 'etkinlik',
     tag: 'etkinlik',
-    resimler: ['/haber2_1.jpg', '/haber2_2.jpg', '/haber2_3.jpg'],
+    resimler: ['/images/news/haber2_1.jpg', '/images/news/haber2_2.jpg', '/images/news/haber2_3.jpg'],
   },
   {
     id: 'psb-anatolia-fuar-2025',
@@ -32,6 +32,6 @@ export const haberler: NewsItem[] = [
     tarih: '2025-09-13',
     kategori: 'gezi',
     tag: 'etkinlik',
-    resimler: ['/haber4-1.jpeg', '/haber4-2.jpeg', '/haber4-3.jpeg'],
+    resimler: ['/images/news/haber4-1.jpeg', '/images/news/haber4-2.jpeg', '/images/news/haber4-3.jpeg'],
   },
 ];

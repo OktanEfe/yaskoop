@@ -8,57 +8,72 @@ interface YonetimKuruluProps {
 
 export default function YonetimKurulu({ members }: YonetimKuruluProps) {
   return (
-    <section className="relative py-32 md:py-44 bg-white text-[#14180F] overflow-hidden">
-      {/* Sayfa boşluğunu kıran editoryal çizgi dokusu */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E5E5E5_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:linear-gradient(to_bottom,white,transparent)] opacity-[0.25] pointer-events-none" />
+    <section className="relative isolate overflow-hidden bg-[#f5f7f2] py-20 text-[#193323] md:py-28">
+      <div className="pointer-events-none absolute -left-40 top-12 -z-10 h-96 w-96 rounded-full bg-[#e6eedf] blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        
-        {/* Üst Başlık Grubu: Sol Çizgili Resmi Düzen */}
-        <div className="max-w-3xl mb-20 md:mb-28 relative border-l-2 border-[#2A6119] pl-6 md:pl-8">
-          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#6B6B6B] block mb-3 font-sans">
-            İdari Yapı & Karar Organı
-          </span>
-          <h2 className="text-3xl md:text-[2.6rem] font-bold tracking-tight text-[#14180F] leading-tight">
-            Yönetim Kurulu
-          </h2>
-          <p className="mt-4 text-[#6B6B6B] text-[16px] md:text-[18px] font-light leading-relaxed">
-            Kooperatifimizin yasal mevzuatlar çerçevesinde sevk, idare ve stratejik planlamasından sorumluluk üstlenen yönetim kurulu üyelerimiz.
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-12 flex flex-col gap-6 border-b border-[#193323]/10 pb-8 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-semibold tracking-[-0.045em] text-[#193323] sm:text-5xl">
+              Yönetim Kurulu
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-7 text-[#667365] md:text-base">
+            Kooperatifimizin çalışmalarına yön veren, üretici ortaklarımızın
+            deneyimini ortak hedeflerde buluşturan yönetim kurulumuz.
           </p>
         </div>
 
-        {/* Üye Kartları Grid Akışı */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {members.map((member) => (
-            <div 
-              key={member.id} 
-              className="group relative rounded-2xl border border-[#E5E5E5] bg-[#F5F5F4]/30 p-8 md:p-10 transition-all duration-300 hover:bg-white hover:shadow-[0_16px_32px_-12px_rgba(20,24,15,0.05)] hover:border-[#E5E5E5] flex flex-col h-full"
-            >
-              
-              {/* Üst Kimlik Bilgisi */}
-              <div className="mb-6">
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-[#14180F] mb-3 group-hover:text-[#2A6119] transition-colors duration-300">
-                  {member.isim}
-                </h3>
-                
-                {/* Resmi Unvan Badge Modülü */}
-                <span className="inline-flex items-center rounded-full bg-[#059669]/10 px-3 py-1 text-[11px] font-semibold tracking-wider text-[#059669] font-sans uppercase">
-                  {member.unvan}
-                </span>
-              </div>
+        <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+          {members.map((member, index) => {
+            const isChair = index === 0;
 
-              {/* Biyografi / Görev Tanımı Alanı */}
-              <p className="text-[#6B6B6B] text-[14px] md:text-[15px] leading-[1.7] font-normal text-justify md:text-left flex-1 border-t border-[#E5E5E5] pt-6 group-hover:border-[#059669]/20 transition-colors duration-300">
-                {member.bio}
-              </p>
+            return (
+              <article
+                key={member.id}
+                className={`group relative flex min-h-72 flex-col overflow-hidden rounded-[1.5rem] border p-7 transition duration-300 hover:-translate-y-1 sm:p-8 ${
+                  isChair
+                    ? 'border-[#193323] bg-[#193323] text-white shadow-[0_20px_50px_rgba(25,51,35,0.16)]'
+                    : 'border-[#193323]/10 bg-white text-[#193323] shadow-[0_12px_36px_rgba(25,51,35,0.04)] hover:border-[#69865d]/40 hover:shadow-[0_20px_48px_rgba(25,51,35,0.09)]'
+                }`}
+              >
+                {isChair && (
+                  <div className="pointer-events-none absolute -right-14 -top-20 h-56 w-56 rounded-full border border-white/10" />
+                )}
+                <div className="relative flex min-h-8 items-start justify-end">
+                  {isChair && (
+                    <span className="rounded-full border border-white/15 bg-white/[0.08] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#dce9c7]">
+                      Başkan
+                    </span>
+                  )}
+                </div>
 
-              {/* Kart Altı Kurumsal Şerit Detayı */}
-              <div className="absolute bottom-0 left-8 right-8 h-[2px] bg-[#2A6119] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-full origin-left" />
+                <div className="relative mt-8">
+                  <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] sm:text-[1.7rem]">
+                    {member.isim}
+                  </h3>
+                  <p
+                    className={`mt-3 text-xs font-semibold uppercase leading-5 tracking-[0.12em] ${
+                      isChair ? 'text-[#dce9c7]' : 'text-[#58764c]'
+                    }`}
+                  >
+                    {member.unvan}
+                  </p>
+                </div>
 
-            </div>
-          ))}
+                <p
+                  className={`mt-auto border-t pt-5 text-sm leading-6 ${
+                    isChair
+                      ? 'border-white/15 text-white/75'
+                      : 'border-[#193323]/10 text-[#667365]'
+                  }`}
+                >
+                  {member.bio.replace(/^Kurucu ortak\s*[·•]\s*/, '')}
+                </p>
+              </article>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

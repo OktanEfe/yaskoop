@@ -4,9 +4,10 @@ import type { GalleryImage } from '@/types';
 interface GaleriItemProps {
   image: GalleryImage;
   onClick: (image: GalleryImage) => void;
+  priority?: boolean;
 }
 
-export default function GaleriItem({ image, onClick }: GaleriItemProps) {
+export default function GaleriItem({ image, onClick, priority = false }: GaleriItemProps) {
   return (
     <button
       type="button"
@@ -18,6 +19,8 @@ export default function GaleriItem({ image, onClick }: GaleriItemProps) {
           src={image.src}
           alt={image.alt}
           fill
+          priority={priority}
+          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>

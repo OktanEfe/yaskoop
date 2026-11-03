@@ -6,77 +6,88 @@ import Button from '@/components/ui/Button';
 import { uyeler } from '@/lib/data/uyeler';
 
 export default function UyeLogoSeridi() {
-  if (!uyeler || uyeler.length === 0) return null;
-
   return (
-    <section className="relative py-24 md:py-36 bg-neutral-50/40 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+    <section className="relative overflow-hidden bg-[#f4f4ec] py-24 md:py-32">
+      <div className="pointer-events-none absolute -right-36 -top-32 h-[28rem] w-[28rem] rounded-full bg-[#dce8d5] blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-4 shadow-sm select-none">
-            Güçlü Ortaklık Yapısı
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-[-0.02em] text-neutral-900 max-w-md leading-tight">
-            Kooperatifimizi Oluşturan Değerli Ortaklarımız
-          </h2>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#2a6119]/15 bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#35663a]">
+              Aynı toprağın üreticileri
+            </span>
+            <h2 className="text-4xl font-semibold leading-[1.05] tracking-[-0.045em] text-[#193323] md:text-5xl">
+              Gücümüz, birlikte üreten 10 kurucu ortağımız.
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-7 text-[#526455]">
+            Yalova’dan Hollanda’ya uzanan üretici ortaklarımız, doğaya değer katan
+            bir gelecek için aynı çatı altında buluşuyor.
+          </p>
         </div>
 
-        <div className="w-full">
-          <div className="flex md:hidden overflow-x-auto gap-5 pb-6 px-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory">
-            {uyeler.map((item) => (
-              <div 
-                key={item.id}
-                className="flex-shrink-0 w-[180px] aspect-[3/2] bg-white border border-neutral-100 rounded-2xl flex items-center justify-center p-6 shadow-[0_4px_12px_rgba(0,0,0,0.02)] snap-center"
-              >
-                <div className="relative w-full h-full">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 lg:gap-5">
+          {uyeler.map((item, index) => (
+            <article
+              key={item.id}
+              className="group flex min-h-48 flex-col rounded-2xl border border-[#193323]/[0.08] bg-white p-4 shadow-[0_8px_24px_rgba(24,49,32,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#75966d]/50 hover:shadow-[0_16px_34px_rgba(24,49,32,0.1)] sm:min-h-56 sm:rounded-3xl sm:p-5"
+            >
+              <div className="mb-4 flex h-24 items-center justify-center rounded-xl bg-[#f7f8f3] p-3 sm:mb-5 sm:h-28 sm:rounded-2xl sm:p-4">
+                {item.logo ? (
                   <Image
                     src={item.logo}
-                    alt={item.isim || 'Üye Logo'}
-                    fill
-                    className="object-contain"
-                    sizes="180px"
+                    alt={`${item.sirket} logosu`}
+                    width={240}
+                    height={150}
+                    className="max-h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 18vw"
                   />
-                </div>
+                ) : (
+                  <span
+                    aria-label={`${item.sirket} logosu henüz paylaşılmadı`}
+                    className="text-center text-2xl font-semibold tracking-[0.08em] text-[#49644a] sm:text-3xl"
+                  >
+                    US
+                  </span>
+                )}
               </div>
-            ))}
-          </div>
-
-          <div className="hidden md:grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {uyeler.map((item) => (
-              <div
-                key={item.id}
-                className="group relative aspect-[3/2] bg-white border border-neutral-100 rounded-3xl flex items-center justify-center p-8 shadow-[0_4px_16px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-8px_rgba(0,0,0,0.05)] hover:border-neutral-200/80 transition-all duration-500 transform hover:-translate-y-1"
-              >
-                <div className="relative w-full h-full transition-all duration-500 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100">
-                  <Image
-                    src={item.logo}
-                    alt={item.isim || 'Üye Logo'}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 1024px) 25vw, 20vw"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#789078] sm:text-[11px]">
+                Kurucu ortak {String(index + 1).padStart(2, '0')}
+              </p>
+              <h3 className="text-xs font-semibold leading-snug text-[#1d3827] sm:text-sm">
+                {item.sirket}
+              </h3>
+              <p className="mt-2 text-xs leading-5 text-[#657467]">
+                {item.isim}
+              </p>
+              {!item.logo && (
+                <p className="mt-1 text-[10px] leading-4 text-[#899389]">
+                  Logo bekleniyor
+                </p>
+              )}
+            </article>
+          ))}
         </div>
 
-        <div className="mt-14 md:mt-20 flex justify-center">
+        <div className="mt-10 flex justify-center md:mt-14">
           <Button asChild variant="primary" size="md">
             <Link href="/uyeler">
-              <span>Tüm Ortakları İncele</span>
-              <div className="flex items-center justify-center w-5 h-5 rounded-full bg-neutral-50 text-neutral-800 group-hover:bg-white group-hover:text-accent transition-colors duration-300">
-                <svg 
-                  width="14" 
-                  height="14" 
-                  viewBox="0 0 16 16" 
-                  fill="none" 
-                  className="transition-transform duration-300 transform group-hover:translate-x-0.5"
-                >
-                  <path d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
+              <span>Kurucu ortakları tanıyın</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path
+                  d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </Link>
           </Button>
         </div>

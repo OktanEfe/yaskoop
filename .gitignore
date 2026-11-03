@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# Local copies of original assets; production-ready files live in public/.
+/_reference/assets/local-originals/
 
 # vercel
 .vercel

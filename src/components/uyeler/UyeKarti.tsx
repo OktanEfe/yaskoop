@@ -3,6 +3,7 @@ import type { Member } from '@/types';
 
 interface UyeKartiProps {
   uye: Member;
+  priority?: boolean;
 }
 
 function getInitials(name: string) {
@@ -14,28 +15,36 @@ function getInitials(name: string) {
     .join('');
 }
 
-export default function UyeKarti({ uye }: UyeKartiProps) {
+export default function UyeKarti({ uye, priority = false }: UyeKartiProps) {
   const initials = getInitials(uye.isim);
 
   return (
-    <article className="rounded-[2rem] border border-neutral-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="overflow-hidden rounded-t-[1.75rem] bg-neutral-100">
-        <div className="relative aspect-[4/5] w-full">
-          {uye.foto ? (
-            <Image src={uye.foto} alt={uye.isim} fill className="object-cover" />
+    <article className="overflow-hidden rounded-[1.75rem] border border-[#193323]/10 bg-white shadow-[0_10px_32px_rgba(24,49,32,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(24,49,32,0.1)]">
+      <div className="flex min-h-52 items-center justify-center bg-[#f6f7f1] p-10 sm:min-h-60">
+        {uye.logo ? (
+          <Image
+            src={uye.logo}
+            alt={`${uye.sirket} logosu`}
+            width={360}
+            height={220}
+            priority={priority}
+            className="max-h-44 w-full object-contain"
+            sizes="(max-width: 768px) 90vw, 40vw"
+          />
           ) : (
-            <div className="flex h-full items-center justify-center bg-neutral-200 text-4xl font-semibold text-neutral-700">
+            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#e6ebdf] text-3xl font-semibold text-[#35563a]">
               {initials}
             </div>
           )}
-        </div>
       </div>
-      <div className="p-8">
-        <h3 className="text-2xl font-semibold text-neutral-900 leading-tight mb-3">{uye.isim}</h3>
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-500 mb-4">
-          {uye.unvan} · {uye.sirket}
+      <div className="p-6 sm:p-8">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#688269]">
+          {uye.unvan}
         </p>
-        <p className="text-neutral-700 leading-8 text-sm whitespace-pre-line">{uye.tanitimYazisi}</p>
+        <h3 className="text-xl font-semibold leading-tight text-[#193323] sm:text-2xl">
+          {uye.isim}
+        </h3>
+        <p className="mt-3 text-sm leading-6 text-neutral-600">{uye.sirket}</p>
       </div>
     </article>
   );

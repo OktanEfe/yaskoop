@@ -2,7 +2,6 @@
 
 import type { CtaData } from '@/types';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 
 interface OrtakOlCTAProps {
   cta: CtaData;
@@ -10,55 +9,34 @@ interface OrtakOlCTAProps {
 
 export default function OrtakOlCTA({ cta }: OrtakOlCTAProps) {
   return (
-    <section className="relative py-28 md:py-36 bg-white text-[#14180F] overflow-hidden">
-      {/* Aydınlık arka planda hafif ve kurumsal bir derinlik dokunuşu */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2A6119]/[0.015] rounded-full blur-[160px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-white py-20 text-white sm:py-24 md:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="group relative isolate overflow-hidden rounded-[2rem] bg-[#173624] px-7 py-10 shadow-[0_28px_80px_rgba(23,54,36,0.18)] sm:px-10 sm:py-12 lg:px-16 lg:py-16">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_85%_15%,rgba(190,221,157,0.2),transparent_35%),linear-gradient(120deg,#173624,#254a30)]" />
+          <div className="pointer-events-none absolute -right-16 -top-28 -z-10 h-80 w-80 rounded-full border border-white/10 transition-transform duration-700 group-hover:scale-110 sm:h-[26rem] sm:w-[26rem]" />
+          <div className="pointer-events-none absolute -right-4 -top-16 -z-10 h-64 w-64 rounded-full border border-white/[0.07] sm:h-[21rem] sm:w-[21rem]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        
-        {/* Premium YASKOOP Aydınlık İç Kart Tasarımı */}
-        <div className="relative rounded-2xl border border-[#E5E5E5] bg-[#F5F5F4] p-10 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.02)] overflow-hidden group transition-all duration-300 hover:shadow-[0_16px_40px_-12px_rgba(20,24,15,0.06)]">
-          
-          {/* Kart içi asimetrik hafif yeşil doku */}
-          <div className="absolute -right-24 -bottom-24 w-80 h-80 bg-[#059669]/[0.02] rounded-full blur-3xl pointer-events-none transition-transform duration-700 group-hover:scale-110" />
-
-          <div className="relative z-10 flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between w-full">
-            
-            {/* Sol Taraf: Metinsel Bildirge Alanı */}
-            <div className="flex-1">
-              {cta.eyebrow && (
-                <span className="inline-flex items-center rounded-full bg-[#059669]/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#059669] font-sans">
-                  {cta.eyebrow}
-                </span>
-              )}
-              
-              <h2 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-[#14180F] leading-tight">
+          <div className="flex flex-col items-start gap-9 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-4xl md:text-5xl">
                 {cta.title}
               </h2>
-              
-              <p className="mt-4 max-w-2xl text-[15px] md:text-[16px] leading-[1.65] text-[#6B6B6B] font-normal text-justify md:text-left">
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 md:text-lg md:leading-8">
                 {cta.description}
               </p>
             </div>
 
-            {/* Sağ Taraf: Ana Buton Hover Efektiyle Pill/Oval CTA Butonu */}
-            <div className="shrink-0 w-full lg:w-auto">
-              <Button
-                asChild
-                variant="primary"
-                size="lg"
-                className="w-full lg:w-auto"
+            <div className="w-full shrink-0 lg:w-auto">
+              <Link
+                href={cta.buttonHref}
+                className="group/button inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-[#d8e6ab] px-7 text-sm font-bold text-[#173624] transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:px-8"
               >
-                <Link href={cta.buttonHref} className="tracking-wide">
-                  {cta.buttonLabel}
-                </Link>
-              </Button>
+                {cta.buttonLabel}
+                <span aria-hidden="true" className="transition-transform group-hover/button:translate-x-1">→</span>
+              </Link>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

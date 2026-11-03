@@ -1,16 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Marka renk paleti — beyaz zemin ağırlıklı, yeşil sadece vurgu */
-  --color-background: #ffffff;
-  --color-foreground: #1a1a1a;
-  --color-muted: #6b6b6b;
-  --color-border: #e5e5e5;
-  --color-light-gray: #f5f5f5;
-  --color-dark-gray: #1f1f1f;
-  --color-accent: #2a6119;
-  --color-accent-hover: #1e4712;
-  --color-accent-text: #34d399;
+  --color-background: #fcfcf8;
+  --color-foreground: #18251b;
+  --color-muted: #667366;
+  --color-border: #e4e9df;
+  --color-light-gray: #f1f4ec;
+  --color-dark-gray: #14281c;
+  --color-accent: #27603c;
+  --color-accent-hover: #19492c;
+  --color-accent-text: #cfe4a9;
 
   /* Font */
   --font-sans: var(--font-inter);
@@ -45,11 +44,38 @@
 
 html { scroll-behavior: smooth; }
 
+::selection {
+  color: #14281c;
+  background-color: #d7e8b8;
+}
+
 body {
   font-family: var(--font-inter), sans-serif;
   background-color: var(--color-background);
   color: var(--color-foreground);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Hero slider animasyonları */

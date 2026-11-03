@@ -70,7 +70,7 @@ function IstatistikKutu({ stat, index }: { stat: StatItem; index: number }) {
       style={{ 
         transitionDelay: `${index * 75}ms` 
       }}
-      className={`group relative flex flex-col items-center justify-center text-center px-6 py-12 md:py-16 bg-neutral-900/40 border border-white/5 rounded-2xl backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.2)] transition-all duration-700 transform ${
+      className={`group relative flex flex-col items-center justify-center rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/[0.1] to-white/[0.035] px-6 py-12 text-center shadow-[0_12px_40px_rgba(0,0,0,0.2)] backdrop-blur-md transition-all duration-700 ${
         started ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       } hover:bg-neutral-900/60 hover:border-[#34D399]/20`}
     >
@@ -79,7 +79,7 @@ function IstatistikKutu({ stat, index }: { stat: StatItem; index: number }) {
 
       {/* Büyük Sayı Alanı - Şeffaf ve Premium Zümrüt Tonu */}
       <span 
-        className="text-4xl md:text-5xl lg:text-[3.5rem]/none font-bold tracking-[-0.02em] text-white flex items-center select-none"
+        className="flex select-none items-center text-5xl font-semibold tracking-[-0.05em] text-white md:text-6xl lg:text-[4.25rem]/none"
         style={{ fontVariantNumeric: 'tabular-nums' }}
       >
         {display}
@@ -106,7 +106,7 @@ function IstatistikKutu({ stat, index }: { stat: StatItem; index: number }) {
 
 export default function IstatistikSeridi() {
   return (
-    <section className="relative py-20 md:py-32 bg-[#14180F] overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#173822] via-[#10271b] to-[#091a12] py-20 md:py-32">
       {/* Arka Plan Premium Derin Yeşil Glow Efektleri */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#2A6119]/8 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#34D399]/4 rounded-full blur-[120px] pointer-events-none" />
