@@ -16,13 +16,15 @@ export default function Footer() {
         <div className="grid gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_1fr] lg:gap-16 lg:pb-16">
           <div className="max-w-md">
             <Link href="/" aria-label="Yaskoop ana sayfa" className="inline-flex items-center gap-3 transition-opacity hover:opacity-80">
-              <Image
-                src="/logo/logo222.png"
-                alt="Yaskoop"
-                width={72}
-                height={72}
-                className="h-14 w-14 object-contain"
-              />
+              <span className="inline-flex shrink-0 rounded-full bg-[#f4f2e7]/95 p-1 shadow-sm">
+                <Image
+                  src="/logo/logo-photo-transparent.png"
+                  alt="Yaskoop"
+                  width={72}
+                  height={72}
+                  className="h-14 w-14 object-contain"
+                />
+              </span>
               <span className="text-xl font-semibold tracking-[0.18em]">YASKOOP</span>
             </Link>
             <p className="mt-6 text-sm leading-7 text-white/70 sm:text-base">

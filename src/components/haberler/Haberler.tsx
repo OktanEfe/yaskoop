@@ -79,7 +79,7 @@ export default function Haberler() {
         </div>
       </div>
 
-      <div className="mx-auto -mt-8 max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto mt-6 max-w-7xl px-5 sm:-mt-8 sm:px-8 lg:px-12">
         <div className="rounded-[1.75rem] border border-[#193323]/10 bg-white p-5 shadow-[0_20px_60px_rgba(25,51,35,0.08)] sm:p-8 lg:p-10">
           <div className="mb-9 flex flex-col gap-5 border-b border-[#193323]/10 pb-7 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -120,7 +120,7 @@ export default function Haberler() {
           </div>
         ) : (
           <>
-            <div className="space-y-5">
+            <div className="space-y-7 sm:space-y-5">
               {featuredItem && (
                 <HaberCard
                   haber={featuredItem}
@@ -130,7 +130,7 @@ export default function Haberler() {
                 />
               )}
               {currentItems.length > 0 && (
-                <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               {currentItems.map((haber, index) => (
                 <HaberCard
                   key={haber.id}

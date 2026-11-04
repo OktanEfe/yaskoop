@@ -42,9 +42,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between gap-4">
             
             {/* Logo Alanı */}
-            <Link href="/" aria-label="Yaskoop ana sayfa" className="flex shrink-0 select-none items-center transition-all duration-500 hover:opacity-90">
+            <Link href="/" aria-label="Yaskoop ana sayfa" className="flex shrink-0 select-none items-center rounded-full bg-[#f4f2e7]/95 p-1 shadow-sm transition-all duration-500 hover:opacity-90">
               <Image
-                src="/logo/logo222.png"
+                src="/logo/logo-photo-transparent.png"
                 alt="Yaskoop"
                 width={92}
                 height={92}
@@ -120,13 +120,15 @@ export default function Navbar() {
             aria-label="Yaskoop ana sayfa"
             className="flex min-w-0 flex-1 items-center"
           >
-            <Image
-              src="/logo/logo222.png"
-              alt="Yaskoop"
-              width={88}
-              height={88}
-              className="h-14 w-14 shrink-0 object-contain"
-            />
+            <span className="inline-flex shrink-0 rounded-full bg-[#f4f2e7]/95 p-1 shadow-sm">
+              <Image
+                src="/logo/logo-photo-transparent.png"
+                alt="Yaskoop"
+                width={88}
+                height={88}
+                className="h-14 w-14 object-contain"
+              />
+            </span>
           </Link>
           <button
             onClick={() => setMenuOpen(false)}

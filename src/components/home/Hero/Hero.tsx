@@ -33,7 +33,7 @@ export default function Hero() {
 
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-[#0d2318]/90 via-[#10241a]/65 to-[#12231b]/15" />
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#102018]/75 via-transparent to-black/20" />
-      <div className="absolute inset-0 z-10 flex items-end px-6 pb-[13.5rem] pt-28 sm:px-10 sm:pb-[12.5rem] lg:px-20 lg:pb-[11.5rem]">
+      <div className="absolute inset-0 z-10 flex items-end px-6 pb-[9.5rem] pt-28 sm:px-10 sm:pb-[10.5rem] lg:px-20 lg:pb-[11.5rem]">
         <div className="mx-auto w-full max-w-[1440px]">
           <div className="max-w-4xl">
           <h1
