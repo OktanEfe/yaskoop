@@ -10,7 +10,7 @@ export const hakkimizdaOzet = {
 
 // TODO: Gerçek sayılar yönetim kurulu onayıyla güncellenecek
 export const istatistikler: StatItem[] = [
-  { id: 'kurulus', label: 'Kuruluş Yılı', value: 2023 },
+  { id: 'kurulus', label: 'Kuruluş Yılı', value: 2025 },
   { id: 'uye', label: 'Üye Sayısı', value: 10 },
   { id: 'alan', label: 'Üretim Alanı', value: 25, suffix: '+ hektar' },
   { id: 'urun', label: 'Ürün Çeşidi', value: 50, suffix: '+' },

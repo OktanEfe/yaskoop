@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="max-w-md">
             <Link href="/" aria-label="Yaskoop ana sayfa" className="inline-flex items-center gap-3 transition-opacity hover:opacity-80">
               <Image
-                src="/logo/yaskoop-mark-white.svg"
+                src="/logo/logo222.png"
                 alt="Yaskoop"
                 width={72}
                 height={72}
