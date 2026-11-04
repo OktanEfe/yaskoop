@@ -7,7 +7,7 @@ export const heroSlides: HeroSlide[] = [
     subtext: 'On kurucu ortağın emeğiyle, Yalova’nın bereketli üretiminden dünyaya uzanan bir yolculuk.',
   },
   {
-    image: '/images/hero/PHOTO-2025-09-03-19-41-09.jpg',
+    image: '/images/hero/hero-farm-restored.webp',
     heading: 'Her fidanda emek, her üretimde ortaklık.',
     subtext: 'Köklü üretici deneyimini modern tarım teknikleriyle buluşturuyoruz.',
   },

@@ -11,7 +11,7 @@ import type {
 
 export const hakkimizdaHero: HeroSection = {
   eyebrow: 'Kurumsal Hafıza',
-  title: 'Hakkımızda',
+  title: 'Yalova’dan, birlikte büyüyen bir hikâye.',
   subtitle:
     "S.S. Yalova Süs Bitkileri İşletme Kooperatifi, sürdürülebilir tarım ve yenilikçi peyzaj çözümleri üretmek amacıyla Yalova'nın merkezinde faaliyet göstermektedir.",
 };

@@ -30,6 +30,9 @@ export default function IletisimBilgi() {
             <a href="tel:+905352936007" className="mt-2 inline-flex text-sm font-medium text-[#354735] transition-colors hover:text-[#58764c]">
               +90 535 293 60 07
             </a>
+            <a href="tel:+905059075785" className="mt-2 flex text-sm font-medium text-[#354735] transition-colors hover:text-[#58764c]">
+              +90 (505) 907 57 85
+            </a>
           </div>
         </div>
 

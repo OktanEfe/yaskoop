@@ -13,15 +13,14 @@ interface HakkimizdaTanitimProps {
 export default function HakkimizdaTanitim({ hero, story, photo }: HakkimizdaTanitimProps) {
   return (
     <div className="w-full select-none selection:bg-[#14180F] selection:text-white font-sans">
-      <section className="relative isolate overflow-hidden bg-[#10251a] pb-20 pt-32 text-white md:pb-28 md:pt-40">
+      <section className="relative isolate overflow-hidden bg-[#10251a] pb-20 pt-24 text-white md:pb-28 md:pt-32">
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_75%_35%,rgba(85,139,82,0.28),transparent_48%),linear-gradient(130deg,#10251a_15%,#183b29_100%)]" />
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-12 lg:gap-16 lg:px-12">
           <div className="lg:col-span-6">
             <h1 className="max-w-2xl text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-white sm:text-6xl md:text-7xl">
-              {hero.title}
-              <span className="mt-3 block text-[#cde0a5]">Yalova’dan, birlikte büyüyen bir hikâye.</span>
+              <span className="block text-[#cde0a5]">{hero.title}</span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-8 text-white/75 md:text-lg md:leading-9">
               {hero.subtitle}

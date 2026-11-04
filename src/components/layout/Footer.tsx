@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="max-w-md">
             <Link href="/" aria-label="Yaskoop ana sayfa" className="inline-flex items-center gap-3 transition-opacity hover:opacity-80">
               <Image
-                src="/logo/logo-white.png"
+                src="/logo/yaskoop-mark-white.svg"
                 alt="Yaskoop"
                 width={72}
                 height={72}
@@ -70,6 +70,9 @@ export default function Footer() {
               </p>
               <a className="block transition hover:text-white" href="tel:+905352936007">
                 +90 535 293 60 07
+              </a>
+              <a className="block transition hover:text-white" href="tel:+905059075785">
+                +90 (505) 907 57 85
               </a>
               <a className="block transition hover:text-white" href="mailto:info@yaskoop.com.tr">
                 info@yaskoop.com.tr

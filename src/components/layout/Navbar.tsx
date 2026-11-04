@@ -44,7 +44,7 @@ export default function Navbar() {
             {/* Logo Alanı */}
             <Link href="/" aria-label="Yaskoop ana sayfa" className="flex shrink-0 select-none items-center transition-all duration-500 hover:opacity-90">
               <Image
-                src="/logo/logo-white.png"
+                src="/logo/yaskoop-mark-white.svg"
                 alt="Yaskoop"
                 width={92}
                 height={92}
@@ -121,7 +121,7 @@ export default function Navbar() {
             className="flex min-w-0 flex-1 items-center"
           >
             <Image
-              src="/logo/logo-white.png"
+              src="/logo/yaskoop-mark-white.svg"
               alt="Yaskoop"
               width={88}
               height={88}

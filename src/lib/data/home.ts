@@ -12,8 +12,8 @@ export const hakkimizdaOzet = {
 export const istatistikler: StatItem[] = [
   { id: 'kurulus', label: 'Kuruluş Yılı', value: 2023 },
   { id: 'uye', label: 'Üye Sayısı', value: 10 },
-  { id: 'alan', label: 'Üretim Alanı', value: 50, suffix: '+ hektar' },
-  { id: 'urun', label: 'Ürün Çeşidi', value: 25, suffix: '+' },
+  { id: 'alan', label: 'Üretim Alanı', value: 25, suffix: '+ hektar' },
+  { id: 'urun', label: 'Ürün Çeşidi', value: 50, suffix: '+' },
 ];
 
 export const iletisimCta = {
